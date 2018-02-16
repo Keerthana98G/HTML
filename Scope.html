@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html><head>
+</head>
+<script src="angular.min.js"></script>
+<body contenteditable="false">
+
+<div ng-app="myApp" ng-controller="myCtrl" class="ng-scope">
+<p>First Name : <input type="text" ng-model="firstName" class="ng-pristine ng-untouched ng-valid ng-empty"></p>
+<p>Last Name : <input type="text" ng-model="lastName" class="ng-pristine ng-untouched ng-valid ng-empty"></p>
+  <h1 class="ng-binding">Hello   {{ fullName() }} </h1>
+ 
+</div>
+
+<script>
+var app = angular.module("myApp", []);
+app.controller("myCtrl", function($scope) {
+    $scope.firstName = "";
+    $scope.lastName = "";
+    $scope.fullName=function(){
+	return $scope.firstName +"  "+ $scope.lastName;
+};
+});
+</script>
+
+
+
+</body></html>
